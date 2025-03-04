@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs, path::Path, ops::Deref};
+use std::{collections::HashMap, env, fs, ops::Deref, path::Path};
 use bevy::prelude::*;
 use serde::Deserialize;
 
@@ -6,7 +6,7 @@ pub struct ResourcesPlugin;
 
 impl Plugin for ResourcesPlugin {
     fn build(&self, app: &mut App) {
-        let constants = match load_constants("assets/constants.json") {
+        let constants = match load_constants("src/assets/constants.json") {
             Ok(c) => c,
             Err(e) => {
                 error!("Failed to load constants.json: {}", e);

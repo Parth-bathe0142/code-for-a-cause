@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use std::collections::HashMap;
 
-use crate::components::{GridPos, Land, LowerAir, UpperAir};
+use crate::game::components::{GridPos, Land, LowerAir, UpperAir};
 
 pub struct TilesPlugin;
 impl Plugin for TilesPlugin {
